@@ -1,0 +1,1 @@
+My first chrome extension. You select an text and it returns back search results from the TV Maze website.
