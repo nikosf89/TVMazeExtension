@@ -19,6 +19,7 @@ function renderShow(show) {
 
     const title = document.createElement("h2")
     title.textContent = show.show.name
+    title.style.textAlign = "center"
 
     const image = document.createElement("img")
     image.src = show.show.image ? show.show.image.medium : null
