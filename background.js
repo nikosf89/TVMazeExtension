@@ -21,20 +21,19 @@ chrome.contextMenus.onClicked.addListener((event) => {
         fetch(`http://api.tvmaze.com/search/shows?q=${event.selectionText}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 chrome.storage.local.set({
-                    shows: data,
-                })
-            })
-
-        chrome.tabs.create({
-            url: chrome.runtime.getURL("result.html")
-        })
-        
+                    shows: data
+                }, () => {
+                    chrome.tabs.create({
+                        url: chrome.runtime.getURL("result.html")
+                    });
+                });
+            });
     } else if (event.menuItemId === "contextMenu2") {
         chrome.tts.speak(event.selectionText, {
             lang: "zh-CN",
             rate: 1,
-        })
+        });
     }
-})
+});
+

@@ -1,5 +1,4 @@
 chrome.storage.local.get(["shows"], (res) => {
-    console.log(res)
     for (const show of res.shows) {
         renderShow(show)
     }
