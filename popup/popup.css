@@ -1,4 +1,11 @@
 body {
   height: 300px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
 }
